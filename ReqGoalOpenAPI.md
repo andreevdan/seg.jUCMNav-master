@@ -1,8 +1,0 @@
-An open API would be nice for jUCMNav. But the Eclipse plug-in extension mechanisms may be sufficient? -- Daniel Amyot - 29 Jan 2005
-
-You want an open API for doing what kind of operations exactly? Accessing/manipulating the model? Make the editor better? Your requirement ends with a question meaning we should be looking at creating extension points inside our plug-in. I think we would have to discuss this matter in order to get a feeling of what we want to do by the end of this semester. My initial view is that we will eventually have extension points in our plug-in so that we can add modular units to jUCMNav. However, by the end of the semester, our tool will be quite simple and the probable extensions seem to be to the core functionality. Maybe we should concentrate on doing the core as best as we can. The Eclipse framework and our open source licensing scheme will allow anyone to build on what we have already created. Hopefuly, these additional features will be integrated with the main jUCMNav branch. -- Jason Kealey - 03 Feb 2005
-
-Mainly Accessing/manipulating the model, and invoking some of the commands accessible from the GUI (e.g., for exporting UCMs to EPS/GIF, for extracting scenarios and exporting them to XML, etc.). As long as extension points can be added later (even after your project, without having to include them right from the start), then I think we should be OK with to contribution towards this goal in your project. -- Daniel Amyot - 13 Feb 2005 
-
-
-[[img/ReqGoalOpenAPI.PNG]]
