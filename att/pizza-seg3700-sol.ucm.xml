@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE ucm-design SYSTEM "ucm23xml.dtd">
+<ucm-design design-id="design29" dtd-version="23" design-name="PizzaRapide" description="Voici la description d'un systeme ou les pizzas sont commandees,&#xA;livrees, et mangees! Quelques situations&#xA;exceptionelles sont aussi presentees." notation="Buhr-UCM" width="1320" height="1100">
+
+   <component-specification>
+      <component component-id="c0" component-name="Banque" formal="no" colour="0" description="Institution financiere ou compagnie&#xA;de carte de credit qui peut&#xA;payer au nom de ses clients.">
+         <regular type="team" protected="no" replicated="no" replication-factor="2" slot="no"/>
+      </component>
+
+      <component component-id="c1" component-name="Chef" formal="no" colour="0" description="Chef dans la cuisine">
+         <regular type="team" protected="no" replicated="no" replication-factor="2" slot="no"/>
+      </component>
+
+      <component component-id="c2" component-name="ClientAffame" formal="no" colour="0" description="Client qui se meurt de manger une pizza!">
+         <regular type="team" protected="no" replicated="no" replication-factor="2" slot="no"/>
+      </component>
+
+      <component component-id="c3" component-name="Livreur" formal="no" colour="0" description="Personne qui livre les pizzas.">
+         <regular type="team" protected="no" replicated="no" replication-factor="2" slot="no"/>
+      </component>
+
+      <component component-id="c4" component-name="Pizzeria" formal="no" colour="0" description="Restaurant.">
+         <regular type="team" protected="no" replicated="no" replication-factor="2" slot="no"/>
+      </component>
+
+      <component component-id="c5" component-name="Receptioniste" formal="no" colour="0" description="Personne qui prend en note&#xA;les commandes et l'adresse du client">
+         <regular type="team" protected="no" replicated="no" replication-factor="2" slot="no"/>
+      </component>
+
+   </component-specification>
+
+   <path-variable-list>
+      <boolean-variable boolvar-id="bv1" name="ClientTrouve" ref-count="4"/>
+      <boolean-variable boolvar-id="bv0" name="LimiteAtteinte" ref-count="5"/>
+   </path-variable-list>
+   <responsibility-specification>
+      <responsibility resp-id="r0" resp-name="AjouteIngredients" description="Ajoute la sauce, le fromage,&#xA;et les autres ingredients &#xA;demandes sur la pate a pizza.">
+      </responsibility>
+      <responsibility resp-id="r1" resp-name="AnnuleCommande" description="Annule la commande de&#xA;pizza.">
+      </responsibility>
+      <responsibility resp-id="r2" resp-name="Charge" description="Charge le montant specifie&#xA;a la carte de credit.">
+      </responsibility>
+      <responsibility resp-id="r3" resp-name="CuitPizza" description="Fait cuire la pizza dans le four.">
+      </responsibility>
+      <responsibility resp-id="r4" resp-name="LivrePizza" description="Livre la pizza fraiche&#xA;au client affame.">
+      </responsibility>
+      <responsibility resp-id="r5" resp-name="PasseCommande" description="Passe la commande a la cuisine.">
+      </responsibility>
+      <responsibility resp-id="r6" resp-name="PrendNote" description="Prend note de la &#xA;commande du client&#xA;et de son addresse.">
+      </responsibility>
+      <responsibility resp-id="r7" resp-name="PreparePate" description="Utilise ou cuisine une pate a &#xA;pizza.">
+      </responsibility>
+      <responsibility resp-id="r8" resp-name="Remercie" description="Confirme la commande et&#xA;remercie le client.">
+      </responsibility>
+      <responsibility resp-id="r9" resp-name="RetournePizza" description="Retourne la pizza au restaurant.">
+      </responsibility>
+      <responsibility resp-id="r10" resp-name="VerCarte" description="Verifie la carte de credit.">
+      </responsibility>
+      <responsibility resp-id="r11" resp-name="VerifieCredit" description="Verifie que le credit du client's&#xA;est suffisant.">
+      </responsibility>
+   </responsibility-specification>
+
+   <root-maps>
+      <model model-id="m0" model-name="Apercu" title="Apercu de la fabrication/livraison d'une pizza" description="Note: D'autres configurations&#xA;(avec enfichables et souches)&#xA;sont aussi possible, tout&#xA;dependant de ce que nous &#xA;voulons montrer au niveau &#xA;superieur, ou si nous voulons&#xA;mettre en evidence le &#xA;scenario principal.">
+
+         <path-spec>
+            <path-label-list>
+               <path-label path-label-id="pl0" label="_"/>
+               <path-label path-label-id="pl1" label="-"/>
+               <path-label path-label-id="pl2" label="_"/>
+               <path-label path-label-id="pl3" label="[LimAtteinte]"/>
+               <path-label path-label-id="pl4" label="[OK]"/>
+               <path-label path-label-id="pl5" label="_"/>
+               <path-label path-label-id="pl6" label="[Introuvable]"/>
+               <path-label path-label-id="pl7" label="[Trouve]"/>
+            </path-label-list>
+            <hypergraph>
+               <hyperedge hyperedge-id="h0" hyperedge-name="Commande" fx="0.108333" fy="0.160000" description="Appele le restaurant et&#xA;commande une pizza avec&#xA;quelques ingredients.">
+                  <start stream-type="open" label-alignment="centered">
+                  </start>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h1" hyperedge-name="PizzaLivree" fx="0.118182" fy="0.356316" description="Voila! Un autre client&#xA;satisfait.">
+                  <end-point label-alignment="centered">
+                  </end-point>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h2" fx="0.251515" fy="0.181818">
+                  <responsibility-ref resp-id="r6" direction="UP"/>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h3" fx="0.173485" fy="0.177273">
+                  <empty-segment path-label-id="pl0">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h4" fx="0.296212" fy="0.142727">
+                  <empty-segment path-label-id="pl0">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h5" fx="0.290152" fy="0.170000">
+                  <responsibility-ref resp-id="r10" direction="RIGHT"/>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h6" fx="0.272727" fy="0.179091">
+                  <empty-segment path-label-id="pl0">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h7" fx="0.283007" fy="0.096082">
+                  <responsibility-ref resp-id="r11" direction="LEFT"/>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h8" fx="0.397306" fy="0.269764">
+                  <responsibility-ref resp-id="r5" direction="LEFT"/>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h9" fx="0.390152" fy="0.177273">
+                  <synchronization cardinality-source="1" cardinality-target="2" orientation="270">
+                  </synchronization>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h10" fx="0.395473" fy="0.227004">
+                  <empty-segment path-label-id="pl2">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h11" hyperedge-name="CommandeConfirmee" fx="0.110606" fy="0.256364" description="La commande est confirmee.">
+                  <end-point label-alignment="centered">
+                  </end-point>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h12" fx="0.316667" fy="0.230000">
+                  <responsibility-ref resp-id="r8" direction="DOWN"/>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h13" fx="0.357576" fy="0.217273">
+                  <empty-segment path-label-id="pl1">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h14" fx="0.173485" fy="0.251818">
+                  <empty-segment path-label-id="pl1">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h15" fx="0.369697" fy="0.407273">
+                  <responsibility-ref resp-id="r4" direction="RIGHT"/>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h16" fx="0.315152" fy="0.351964">
+                  <empty-segment path-label-id="pl5">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h17" fx="0.382576" fy="0.095455">
+                  <responsibility-ref resp-id="r2" direction="RIGHT"/>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h18" fx="0.389394" fy="0.147715">
+                  <empty-segment path-label-id="pl4">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h19" fx="0.306061" fy="0.072727">
+                  <fork orientation="0"/>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h20" fx="0.290909" fy="0.074545">
+                  <empty-segment path-label-id="pl0">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h21" fx="0.353788" fy="0.060909" description="Le montant peut etre porte&#xA;a la carte.">
+                  <empty-segment path-label-id="pl4" show-label="yes">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h22" fx="0.334091" fy="0.106364" description="Limite atteinte. Le montant&#xA;ne peut pas etre porte a la&#xA;carte.">
+                  <empty-segment path-label-id="pl3" show-label="yes">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h23" hyperedge-name="CommandeAnnulee" fx="0.120455" fy="0.211818">
+                  <end-point label-alignment="centered">
+                  </end-point>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h24" fx="0.349242" fy="0.185455">
+                  <empty-segment path-label-id="pl3">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h25" fx="0.196212" fy="0.211818">
+                  <empty-segment path-label-id="pl3">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h26" fx="0.393182" fy="0.329658">
+                  <empty-segment path-label-id="pl2">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h27" fx="0.284848" fy="0.211818">
+                  <responsibility-ref resp-id="r1" direction="UP"/>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h28" fx="0.347727" fy="0.430909">
+                  <fork orientation="180"/>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h29" fx="0.362121" fy="0.430909">
+                  <empty-segment path-label-id="pl5">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h30" fx="0.288636" fy="0.447273" description="Le bon client a ete trouve a&#xA;l'adresse notee.">
+                  <empty-segment path-label-id="pl7" show-label="yes">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h31" hyperedge-name="PizzaRetournee" fx="0.267424" fy="0.270909" description="La pizza (froide!) est retournee.">
+                  <end-point label-alignment="centered">
+                  </end-point>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h32" fx="0.246970" fy="0.410909">
+                  <responsibility-ref resp-id="r9" direction="UP"/>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h33" fx="0.313636" fy="0.417273" description="Le client est introuvable a&#xA;l'adresse notee.">
+                  <empty-segment path-label-id="pl6" show-label="yes">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h34" fx="0.181818" fy="0.393636">
+                  <empty-segment path-label-id="pl6">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h35" fx="0.151515" fy="0.410909">
+                  <empty-segment path-label-id="pl7">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h36" fx="0.190152" fy="0.296364">
+                  <empty-segment path-label-id="pl6">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h37" hyperedge-name="FaitUnePizza" fx="0.345455" fy="0.337919" description="Fait et cuit une pizza.">
+                  <stub shared="no" type="static" selection-policy="">
+                     <stub-entry-list>
+                        <stub-entry hyperedge-id="h26" stub-entry-id="si26"/>
+                     </stub-entry-list>
+                     <stub-exit-list>
+                        <stub-exit hyperedge-id="h16" stub-exit-id="so25"/>
+                     </stub-exit-list>
+                  </stub>
+               </hyperedge>
+
+               <hyperedge-connection source-hyperedge="h0">
+                  <hyperedge-ref hyperedge-id="h3"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h2">
+                  <hyperedge-ref hyperedge-id="h6"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h3">
+                  <hyperedge-ref hyperedge-id="h2"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h4">
+                  <hyperedge-ref hyperedge-id="h7"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h5">
+                  <hyperedge-ref hyperedge-id="h4"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h6">
+                  <hyperedge-ref hyperedge-id="h5"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h7">
+                  <hyperedge-ref hyperedge-id="h20"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h8">
+                  <hyperedge-ref hyperedge-id="h26"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h9">
+                  <hyperedge-ref hyperedge-id="h10"/>
+                  <hyperedge-ref hyperedge-id="h13"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h10">
+                  <hyperedge-ref hyperedge-id="h8"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h12">
+                  <hyperedge-ref hyperedge-id="h14"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h13">
+                  <hyperedge-ref hyperedge-id="h12"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h14">
+                  <hyperedge-ref hyperedge-id="h11"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h15">
+                  <hyperedge-ref hyperedge-id="h29"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h16">
+                  <hyperedge-ref hyperedge-id="h15"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h17">
+                  <hyperedge-ref hyperedge-id="h18"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h18">
+                  <hyperedge-ref hyperedge-id="h9"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h19">
+                  <hyperedge-ref hyperedge-id="h21"/>
+                  <hyperedge-ref hyperedge-id="h22"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h20">
+                  <hyperedge-ref hyperedge-id="h19"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h21">
+                  <hyperedge-ref hyperedge-id="h17"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h22">
+                  <hyperedge-ref hyperedge-id="h24"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h24">
+                  <hyperedge-ref hyperedge-id="h27"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h25">
+                  <hyperedge-ref hyperedge-id="h23"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h26">
+                  <hyperedge-ref hyperedge-id="h37"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h27">
+                  <hyperedge-ref hyperedge-id="h25"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h28">
+                  <hyperedge-ref hyperedge-id="h33"/>
+                  <hyperedge-ref hyperedge-id="h30"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h29">
+                  <hyperedge-ref hyperedge-id="h28"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h30">
+                  <hyperedge-ref hyperedge-id="h35"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h32">
+                  <hyperedge-ref hyperedge-id="h34"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h33">
+                  <hyperedge-ref hyperedge-id="h32"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h34">
+                  <hyperedge-ref hyperedge-id="h36"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h35">
+                  <hyperedge-ref hyperedge-id="h1"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h36">
+                  <hyperedge-ref hyperedge-id="h31"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h37">
+                  <hyperedge-ref hyperedge-id="h16"/>
+               </hyperedge-connection>
+               <path-branching-spec fork-id="h19">
+                  <path-branching-characteristic characteristic="" empty-segment="h21" probability="1.000000" branch-condition="!bv0"/>
+                  <path-branching-characteristic characteristic="" empty-segment="h22" probability="1.000000" branch-condition="bv0"/>
+               </path-branching-spec>
+               <path-branching-spec fork-id="h28">
+                  <path-branching-characteristic characteristic="" empty-segment="h33" probability="1.000000" branch-condition="!bv1"/>
+                  <path-branching-characteristic characteristic="" empty-segment="h30" probability="1.000000" branch-condition="bv1"/>
+               </path-branching-spec>
+            </hypergraph>
+
+         </path-spec>
+
+         <structure-spec>
+            <component-ref component-ref-id="cr0" fx="0.208333" fy="0.386364" width="0.225757" height="0.079091" anchored="no" referenced-component="c3">
+               <responsibility-list>
+                  <hyperedge-ref hyperedge-id="h15"/>
+                  <hyperedge-ref hyperedge-id="h32"/>
+               </responsibility-list>
+               <other-hyperedge-list>
+                  <hyperedge-ref hyperedge-id="h29"/>
+                  <hyperedge-ref hyperedge-id="h28"/>
+                  <hyperedge-ref hyperedge-id="h33"/>
+                  <hyperedge-ref hyperedge-id="h30"/>
+               </other-hyperedge-list>
+            </component-ref>
+
+            <component-ref component-ref-id="cr1" fx="0.057576" fy="0.125455" width="0.109091" height="0.258182" anchored="no" referenced-component="c2">
+               <other-hyperedge-list>
+                  <hyperedge-ref hyperedge-id="h0"/>
+                  <hyperedge-ref hyperedge-id="h1"/>
+                  <hyperedge-ref hyperedge-id="h11"/>
+                  <hyperedge-ref hyperedge-id="h23"/>
+               </other-hyperedge-list>
+            </component-ref>
+
+            <component-ref component-ref-id="cr2" fx="0.206818" fy="0.135455" width="0.222727" height="0.230909" anchored="no" referenced-component="c4">
+               <other-hyperedge-list>
+                  <hyperedge-ref hyperedge-id="h4"/>
+                  <hyperedge-ref hyperedge-id="h18"/>
+               </other-hyperedge-list>
+            </component-ref>
+
+            <component-ref component-ref-id="cr3" fx="0.049383" fy="0.372047" width="0.395062" height="0.114584" anchored="no" referenced-component="c1" component-parent="cr2">
+               <other-hyperedge-list>
+                  <hyperedge-ref hyperedge-id="h37"/>
+                  <hyperedge-ref hyperedge-id="h26"/>
+                  <hyperedge-ref hyperedge-id="h16"/>
+               </other-hyperedge-list>
+            </component-ref>
+
+            <component-ref component-ref-id="cr4" fx="0.032565" fy="0.042928" width="0.432099" height="0.289749" anchored="no" referenced-component="c5" component-parent="cr2">
+               <responsibility-list>
+                  <hyperedge-ref hyperedge-id="h2"/>
+                  <hyperedge-ref hyperedge-id="h5"/>
+                  <hyperedge-ref hyperedge-id="h8"/>
+                  <hyperedge-ref hyperedge-id="h12"/>
+                  <hyperedge-ref hyperedge-id="h27"/>
+               </responsibility-list>
+               <other-hyperedge-list>
+                  <hyperedge-ref hyperedge-id="h6"/>
+                  <hyperedge-ref hyperedge-id="h9"/>
+                  <hyperedge-ref hyperedge-id="h10"/>
+                  <hyperedge-ref hyperedge-id="h13"/>
+                  <hyperedge-ref hyperedge-id="h24"/>
+                  <hyperedge-ref hyperedge-id="h31"/>
+               </other-hyperedge-list>
+            </component-ref>
+
+            <component-ref component-ref-id="cr5" fx="0.205303" fy="0.036364" width="0.222727" height="0.077273" anchored="no" referenced-component="c0">
+               <responsibility-list>
+                  <hyperedge-ref hyperedge-id="h7"/>
+                  <hyperedge-ref hyperedge-id="h17"/>
+               </responsibility-list>
+               <other-hyperedge-list>
+                  <hyperedge-ref hyperedge-id="h20"/>
+                  <hyperedge-ref hyperedge-id="h21"/>
+                  <hyperedge-ref hyperedge-id="h19"/>
+                  <hyperedge-ref hyperedge-id="h22"/>
+               </other-hyperedge-list>
+            </component-ref>
+
+         </structure-spec>
+
+      </model>
+
+   </root-maps>
+
+   <plugin-maps>
+      <model model-id="m1" model-name="FaitUnePizzaUCM" title="" description="">
+
+         <path-spec>
+            <path-label-list>
+               <path-label path-label-id="pl8" label="_"/>
+            </path-label-list>
+            <hypergraph>
+               <hyperedge hyperedge-id="h38" hyperedge-name="CommandePizza" fx="0.037879" fy="0.184091" description="Une pizza est commandee.">
+                  <start stream-type="open" label-alignment="centered">
+                  </start>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h39" fx="0.088542" fy="0.184091">
+                  <empty-segment path-label-id="pl8">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h40" hyperedge-name="PizzaDisponible" fx="0.443182" fy="0.184091" description="La pizza est prete a etre&#xA;livree.">
+                  <end-point label-alignment="centered">
+                  </end-point>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h41" fx="0.139205" fy="0.184091">
+                  <responsibility-ref resp-id="r7" direction="UP"/>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h42" fx="0.240530" fy="0.184091">
+                  <responsibility-ref resp-id="r0" direction="UP"/>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h43" fx="0.189867" fy="0.184091">
+                  <empty-segment path-label-id="pl8">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h44" fx="0.341856" fy="0.184091">
+                  <responsibility-ref resp-id="r3" direction="UP"/>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h45" fx="0.291193" fy="0.184091">
+                  <empty-segment path-label-id="pl8">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge hyperedge-id="h46" fx="0.392519" fy="0.184091">
+                  <empty-segment path-label-id="pl8">
+                  </empty-segment>
+               </hyperedge>
+
+               <hyperedge-connection source-hyperedge="h38">
+                  <hyperedge-ref hyperedge-id="h39"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h39">
+                  <hyperedge-ref hyperedge-id="h41"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h41">
+                  <hyperedge-ref hyperedge-id="h43"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h42">
+                  <hyperedge-ref hyperedge-id="h45"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h43">
+                  <hyperedge-ref hyperedge-id="h42"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h44">
+                  <hyperedge-ref hyperedge-id="h46"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h45">
+                  <hyperedge-ref hyperedge-id="h44"/>
+               </hyperedge-connection>
+               <hyperedge-connection source-hyperedge="h46">
+                  <hyperedge-ref hyperedge-id="h40"/>
+               </hyperedge-connection>
+            </hypergraph>
+
+         </path-spec>
+
+      </model>
+
+   </plugin-maps>
+
+   <plugin-bindings>
+      <plugin-binding parent-map-id="m0" submap-id="m1" stub-id="h37" probability="1.000000">
+         <in-connection-list>
+            <in-connection hyperedge-id="h38" stub-entry-id="si26"/>
+         </in-connection-list>
+         <out-connection-list>
+            <out-connection hyperedge-id="h40" stub-exit-id="so25"/>
+         </out-connection-list>
+      </plugin-binding>
+   </plugin-bindings>
+
+   <scenario-list>
+      <scenario-group name="ScenariosExceptionnels" description="Scenarios menant a un client &#xA;malheureux.">
+         <scenario-definition name="MauvaiseAdresse" description="L'adresse du client est incorrecte et&#xA;la pizza ne peut pas lui etre livree.">
+            <scenario-start map-id="m0" start-id="h0"/>
+            <variable-init variable-id="bv1" value="F"/>
+            <variable-init variable-id="bv0" value="F"/>
+         </scenario-definition>
+         <scenario-definition name="CartePleine" description="Le client ne peut pas payer et sa&#xA;commande est annulee.">
+            <scenario-start map-id="m0" start-id="h0"/>
+            <variable-init variable-id="bv0" value="T"/>
+         </scenario-definition>
+      </scenario-group>
+      <scenario-group name="ScenariosPrimaires" description="Scenarios menant a un client heureux!">
+         <scenario-definition name="ToutVaBien" description="Scenario principal.">
+            <scenario-start map-id="m0" start-id="h0"/>
+            <variable-init variable-id="bv1" value="T"/>
+            <variable-init variable-id="bv0" value="F"/>
+         </scenario-definition>
+      </scenario-group>
+   </scenario-list>
+</ucm-design>

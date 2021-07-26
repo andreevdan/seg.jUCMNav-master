@@ -1,0 +1,11 @@
+# EXPLICIT MAPPING DESIGNER INFORMTION
+
+Explicit mappings are basic transformations of UCM nodes to their equivalent CSM representation. Such mappings can only be made for elements that are found in both UCM and CSM notations. Yong Xiang Zeng’s thesis gives a good description of all the elements which can be mapped explicitly and their attributes. When designing the explicit mapping process, there are several guidelines that need to be followed.
+
+To begin with, each UCM object to be converted is represented by attributes. These are variables that describe the object [1]. Examples of attributes include the id of the object, it's predecessor/successor attributes, its name etc... Some of these attributes may be assigned a value automatically (eg: id) by the UCM Navigator or may be given values by the user (eg: description). In either case, the attributes may or may not have a value assigned to it. In the latter case, the attribute is said to be optional, otherwise it is said to be mandatory. Optional attributes may sometimes return a “null” value, in which case the attribute should not be displayed in CSM.
+
+Not to be neglected is the fact that some UCM objects that are represented in CSM have attributes which are not found in CSM [1]. These can be easily identified by looking at the CSM Schema (and Schema diagram) provided below. We can also have the opposite, attributes which are found in CSM but not in UCM (eg: host-demand). These attributes will then have to be assigned a value, be it constant or random.
+
+With these design guidelines in mind, we created a class (Converter class) for each UCM object which could be mapped explicitly. In each of these classes, we retrieve all the mandatory attributes and output them to the CSM file. When it comes to the optional attributes, we process them in separate classes, according to the Schema Attribute diagram. Thus, all optional attributes for Step objects (Stub and Responsibility Reference in UCM) are created in class Step Attributes?. Same idea for path connection (eg: Or Fork? in UCM) attributes and the workload attributes.
+
+-- Ion Andritoiu? - 15 Apr 2006 

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Rules><Rule><Name>URNconsAllIEsToMapsOrResps</Name><Description>Each GRL intentional element must have a Traces link to a UCM map or responsibility, unless tagged with Traces=No</Description><Classification>grl::IntentionalElement</Classification><Query>getAllIntentionalElements()</Query><Constraint>not(getMetadata('Traces')='No') implies (
+   getLinksToForType('Traces')-&gt;size() &gt; 0
+)</Constraint><Utilities/><WarningOnly>true</WarningOnly></Rule><Rule><Name>URNconsIEToMapOrRespOnly</Name><Description>Traces links from a GRL intentional element must only be to a UCM *map or responsibility*</Description><Classification>grl::IntentionalElement</Classification><Query>getAllIntentionalElements()</Query><Constraint>not(getMetadata('Traces')='No') implies (
+   getLinksToForType('Traces')-&gt;
+      forAll(me:urncore::URNmodelElement | 
+         me.oclIsKindOf(urncore::Responsibility) or me.oclIsKindOf(ucm::map::UCMmap) )
+)</Constraint><Utilities/><WarningOnly>true</WarningOnly></Rule><Rule><Name>URNconsAllActorsToComponents</Name><Description>Each GRL Actor must have a Traces link to a UCM component, unless tagged with Traces=No</Description><Classification>grl::Actor</Classification><Query>getAllActors()</Query><Constraint>not(getMetadata('Traces')='No') implies (
+   getLinksToForType('Traces')-&gt;size() &gt; 0
+)</Constraint><Utilities/><WarningOnly>true</WarningOnly></Rule><Rule><Name>URNconsActorsToComponentsOnly</Name><Description>Traces links from a GRL Actor must only be to a UCM component</Description><Classification>grl::Actor</Classification><Query>getAllActors()</Query><Constraint>not(getMetadata('Traces')='No') implies (
+      getLinksToForType('Traces')-&gt;
+	 forAll(me:urncore::URNmodelElement | 
+	    me.oclIsKindOf(urncore::Component) )
+)</Constraint><Utilities/><WarningOnly>true</WarningOnly></Rule><Rule><Name>URNconsAllComponentsFromActors</Name><Description>Each UCM component must have a Traces link from a GRL actor, unless tagged with Traces=No</Description><Classification>urncore::Component</Classification><Query>getAllComponents()</Query><Constraint>not(getMetadata('Traces')='No') implies (
+   getLinksFromForType('Traces')-&gt;size() &gt; 0
+)</Constraint><Utilities/><WarningOnly>true</WarningOnly></Rule><Rule><Name>URNconsComponentFromActorOnly</Name><Description>Traces links to a UCM component must only be from a GRL *actor*</Description><Classification>urncore::Component</Classification><Query>getAllComponents()</Query><Constraint>not(getMetadata('Traces')='No') implies (
+   getLinksFromForType('Traces')-&gt;
+      forAll(me:urncore::URNmodelElement | me.oclIsKindOf(grl::Actor))
+)</Constraint><Utilities/><WarningOnly>true</WarningOnly></Rule><Rule><Name>URNconsAllMapsFromTasks</Name><Description>Each UCM map must have a Traces link from a GRL Tasks, unless tagged with Traces=No</Description><Classification>ucm::map::UCMmap</Classification><Query>getAllUCMmaps()</Query><Constraint>not(getMetadata('Traces')='No') implies (
+   getLinksFromForType('Traces')-&gt; select(me:urncore::URNmodelElement | 
+    me.oclIsKindOf(grl::IntentionalElement))-&gt;exists(me| me.oclAsType(grl::IntentionalElement).type=grl::IntentionalElementType::Task)
+)</Constraint><Utilities/><WarningOnly>true</WarningOnly></Rule><Rule><Name>URNconsMapFromIEOnly</Name><Description>Traces links to a UCM map must only be from a GRL intentional element</Description><Classification>ucm::map::UCMmap</Classification><Query>getAllUCMmaps()</Query><Constraint>not(getMetadata('Traces')='No') implies (
+   getLinksFromForType('Traces')-&gt;
+      forAll(me:urncore::URNmodelElement | 
+         me.oclIsKindOf(grl::IntentionalElement) )
+)</Constraint><Utilities/><WarningOnly>true</WarningOnly></Rule><Rule><Name>URNconsAllRespFromTasks</Name><Description>Each UCM responsibility must have a Traces link from a GRL Task, unless tagged with Traces=No</Description><Classification>urncore::Responsibility</Classification><Query>getAllResponsibilities()</Query><Constraint>not(getMetadata('Traces')='No') implies (
+   getLinksFromForType('Traces')-&gt; select(me:urncore::URNmodelElement | 
+    me.oclIsKindOf(grl::IntentionalElement))-&gt;exists(me| me.oclAsType(grl::IntentionalElement).type=grl::IntentionalElementType::Task)
+)
+</Constraint><Utilities/><WarningOnly>true</WarningOnly></Rule><Rule><Name>URNconsRespFromIEOnly</Name><Description>Traces links to a UCM responsibility must only be from a GRL intentional element</Description><Classification>urncore::Responsibility</Classification><Query>getAllResponsibilities()</Query><Constraint>not(getMetadata('Traces')='No') implies (
+   getLinksFromForType('Traces')-&gt;
+      forAll(me:urncore::URNmodelElement | 
+         me.oclIsKindOf(grl::IntentionalElement) )
+)</Constraint><Utilities/><WarningOnly>true</WarningOnly></Rule><Rule><Name>URNconsAllComponentsFromActorsREC</Name><Description>Each UCM component (or one of its parents) must have a Traces link from a GRL actor, unless tagged with Traces=No</Description><Classification>ucm::map::ComponentRef</Classification><Query>getAllComponentRefs()</Query><Constraint>not(contDef.oclAsType(urncore::Component).getMetadata('Traces')='No') implies 
+(
+   getAncestors() -&gt;union(self.contDef.oclAsType(urncore::Component)-&gt;asSet()) -&gt; 
+      exists (c:urncore::Component | c.getLinksFromForType('Traces')-&gt;size() &gt; 0)
+)
+</Constraint><Utilities/><WarningOnly>true</WarningOnly></Rule><Rule><Name>URNconsComponentFromActorOnlyREC</Name><Description>Traces links to a UCM component (or one of its parents) must only be from a GRL *actor*</Description><Classification>ucm::map::ComponentRef</Classification><Query>getAllComponentRefs()</Query><Constraint>not(contDef.oclAsType(urncore::Component).getMetadata('Traces')='No') implies 
+(
+   getAncestors() -&gt;union(self.contDef.oclAsType(urncore::Component)-&gt;asSet()) -&gt; 
+      exists (c:urncore::Component | c.getLinksFromForType('Traces')-&gt;
+         forAll(me:urncore::URNmodelElement | me.oclIsKindOf(grl::Actor)))
+)
+</Constraint><Utilities/><WarningOnly>true</WarningOnly></Rule><Rule><Name>URNconsTasksToMapOrResp</Name><Description>Each Task must have a Traces link to a UCM elements, unless tagged with Traces=No</Description><Classification>grl::IntentionalElement</Classification><Query>getAllTasks()</Query><Constraint>not(getMetadata('Traces')='No') implies (
+   getLinksToForType('Traces')-&gt;size() &gt; 0
+)</Constraint><Utilities/><WarningOnly>true</WarningOnly></Rule><Rule><Name>URNconsTaskToMapOrRespOnly</Name><Description>Traces links from a Task must only be to a UCM *map or responsibility*</Description><Classification>grl::IntentionalElement</Classification><Query>getAllTasks()</Query><Constraint>not(getMetadata('Traces')='No') implies (
+   getLinksToForType('Traces')-&gt;
+      forAll(me:urncore::URNmodelElement | 
+         me.oclIsKindOf(urncore::Responsibility) or me.oclIsKindOf(ucm::map::UCMmap) )
+)</Constraint><Utilities/><WarningOnly>true</WarningOnly></Rule><Rule><Name>URNconsMapFromTaskOnly</Name><Description>Traces links to a UCM map must only be from a Task</Description><Classification>ucm::map::UCMmap</Classification><Query>getAllUCMmaps()</Query><Constraint>not(getMetadata('Traces')='No') implies ( 
+getLinksFromForType('Traces')-&gt; select(me:urncore::URNmodelElement | 
+    me.oclIsKindOf(grl::IntentionalElement))-&gt;forAll(me| me.oclAsType(grl::IntentionalElement).type=grl::IntentionalElementType::Task)
+)      
+</Constraint><Utilities/><WarningOnly>true</WarningOnly></Rule><Rule><Name>URNconsAllRespFromTask</Name><Description>Traces links to a UCM responsibility must only be from a Task </Description><Classification>urncore::Responsibility</Classification><Query>getAllResponsibilities()</Query><Constraint>not(getMetadata('Traces')='No') implies ( 
+getLinksFromForType('Traces')-&gt; select(me:urncore::URNmodelElement | 
+    me.oclIsKindOf(grl::IntentionalElement))-&gt;forAll(me| me.oclAsType(grl::IntentionalElement).type=grl::IntentionalElementType::Task)
+)      
+</Constraint><Utilities/><WarningOnly>true</WarningOnly></Rule><Rule><Name>URNconsAllIEsOrParentToMapsOrResps</Name><Description>Each GRL intentional element (or one of its parents) must have a Traces link to a UCM map or responsibility, unless tagged with Traces=No</Description><Classification>grl::IntentionalElement</Classification><Query>getAllIntentionalElements()</Query><Constraint>not(getMetadata('Traces')='No') implies  -- This IE or one of its ancestors along decomposition links has a Trace link   getAncestorsDec() -&gt;union(self-&gt;asSet()) -&gt;exists (ie:grl::IntentionalElement | ie.getLinksToForType('Traces')-&gt;size() &gt; 0)</Constraint><Utilities/><WarningOnly>true</WarningOnly></Rule><Rule><Name>URNconsIEsOrParentToMapsOrRespsOnly</Name><Description>Traces links from a GRL intentional element (or its parents) must only be to a UCM *map or responsibility</Description><Classification>grl::IntentionalElement</Classification><Query>getAllIntentionalElements()</Query><Constraint>not(getMetadata('Traces')='No') and (getLinksToForType('Traces')-&gt;size() &gt; 0) implies(   getLinksToForType('Traces')-&gt;      forAll(me:urncore::URNmodelElement |          me.oclIsKindOf(urncore::Responsibility) or me.oclIsKindOf(ucm::map::UCMmap) ))</Constraint><Utilities/><WarningOnly>true</WarningOnly></Rule></Rules>

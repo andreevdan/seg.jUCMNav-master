@@ -1,0 +1,84 @@
+2005-06-24  jkealey  <jkealey@vitis>
+
+	* src/seg/jUCMNav/editparts/treeEditparts/LabelTreeEditPart.java, src/seg/jUCMNav/editparts/treeEditparts/OutlineRootEditPart.java, src/seg/jUCMNav/editparts/treeEditparts/PathNodeTreeEditPart.java, src/seg/jUCMNav/editparts/treeEditparts/ResponsibilityTreeEditPart.java, src/seg/jUCMNav/editparts/treeEditparts/UcmModelElementTreeEditPart.java, src/seg/jUCMNav/model/util/EObjectClassNameComparator.java, src/seg/jUCMNav/editparts/treeEditparts/ComponentRefTreeEditPart.java, src/seg/jUCMNav/editparts/treeEditparts/ComponentTreeEditPart.java, src/seg/jUCMNav/editparts/treeEditparts/RespRefTreeEditPart.java, src/seg/jUCMNav/editparts/treeEditparts/UCMspecTreeEditPart.java, src/seg/jUCMNav/editparts/treeEditparts/URNspecTreeEditPart.java:
+	bug 328 - reordered elements in outline.
+
+	* src/seg/jUCMNav/editors/UcmEditor.java, src/seg/jUCMNav/editors/palette/UcmPaletteListener.java, src/seg/jUCMNav/editors/palette/tools/PathTool.java, src/seg/jUCMNav/editors/palette/UcmPaletteRoot.java:
+	bug 331 - if click with path tool on pathnode, pathnode will be selected and tool will be unloaded. also, right-middle click anywhere with an active tool will unload it. (for gunter)
+
+	* src/seg/jUCMNav/views/wizards/ExportImageWizard.java, src/seg/jUCMNav/views/wizards/ExportImageWizardPage.java:
+	bug 329 - added progress bar to export image. caused many thread problems. fixed bug where map in the negative x/y portion of the screen was being cropped.
+
+2005-06-23  jkealey  <jkealey@vitis>
+
+	* src/seg/jUCMNav/editors/resourceManagement/UrnModelManager.java, src/seg/jUCMNav/editors/resourceManagement/MultiPageFileManager.java:
+	save as was no longer working for some files; fixed file open error message so that it doesn't appear if the file is blank (files created using the file - new - simple file instead of the wizard)
+
+	* src/seg/jUCMNav/model/commands/delete/DeleteMultiNodeCommand.java, src/seg/jUCMNav/model/util/modelexplore/queries/ReachableNodeFinder.java:
+	bug 320 - loops when deleting in/outs of joins/forks should no longer occur
+
+2005-06-22  jkealey  <jkealey@vitis>
+
+	* src/seg/jUCMNav/views/wizards/NewUcmFileWizard.java:
+	bug 316 - post error when load fails.
+	wizard didn't generate a legal file :)
+
+	* src/seg/jUCMNav/model/util/modelexplore/queries/ReachableNodeFinder.java:
+	JP's initial implementation followed connects.
+
+	* src/seg/jUCMNav/editpolicies/element/PathNodeComponentEditPolicy.java:
+	bug 320 - more loop+deletion faux pas
+
+	* src/seg/jUCMNav/editparts/PathNodeEditPart.java, src/seg/jUCMNav/figures/EndPointFigure.java:
+	end point connected to start/wait/timer is no longer overlaps other figure.
+
+	* src/seg/jUCMNav/editors/UCMNavMultiPageEditor.java, src/seg/jUCMNav/editors/resourceManagement/MultiPageFileManager.java:
+	bug 316 - post error when load fails.
+
+	* src/seg/jUCMNav/figures/router/BSpline.java:
+	bug 320 - connection router had a bug with loops. bug fixed and should be even more efficient!
+
+	* src/seg/jUCMNav/editors/palette/tools/PathTool.java, src/seg/jUCMNav/editparts/NodeConnectionEditPart.java, src/seg/jUCMNav/editpolicies/layout/PathNodeXYLayoutEditPolicy.java, src/seg/jUCMNav/figures/router/BSpline.java, src/seg/jUCMNav/model/commands/delete/DeleteNodeCommand.java, src/seg/jUCMNav/model/commands/transformations/MergeStartEndCommand.java, src/seg/jUCMNav/actions/AddAndForkAction.java, src/seg/jUCMNav/actions/AddAndJoinAction.java, src/seg/jUCMNav/actions/AddOrForkAction.java, src/seg/jUCMNav/actions/AddOrJoinAction.java, src/seg/jUCMNav/actions/MergeStartEndAction.java, src/seg/jUCMNav/actions/SafePathChecker.java, src/seg/jUCMNav/editpolicies/layout/NodeConnectionXYLayoutEditPolicy.java, src/seg/jUCMNav/model/util/modelexplore/GraphExplorer.java, src/seg/jUCMNav/model/util/modelexplore/QueryObject.java:
+	bug 320 - loops; to investigate: given this preliminary version, what is okay, what is not. I think it looks pretty good but I haven't tested everything thoroughly. I know that it is too restrictive concerning paths that have a stub that should be considered to contain a start/end point, but for simplicity's sake, I think the workarounds are sufficient.
+
+2005-06-21  jpdaigle  <jpdaigle@vitis>
+
+	* .cvsignore: more cruise tests
+
+	* .cvsignore: Another cruise test
+
+	* .cvsignore:
+	Just a test to check if cruisecontrol problems are solved. Have a nice lunch everyone.
+
+2005-06-21  jkealey  <jkealey@vitis>
+
+	* src/seg/jUCMNav/editparts/MapAndPathGraphEditPart.java, src/seg/jUCMNav/editparts/PathNodeEditPart.java, src/seg/jUCMNav/figures/router/BSpline.java, src/seg/jUCMNav/figures/router/BSplineConnectionRouter.java, src/seg/jUCMNav/model/util/modelexplore/GraphExplorer.java, src/seg/jUCMNav/model/util/modelexplore/QueryObject.java, src/seg/jUCMNav/figures/SplineConnection.java:
+	bug 320 - reimplemented the connection router. the new version uses JP's query framework and is a listener to model objects. is also a step forward for the implementation of nicer and joins/forks. furthermore, in my only test, this new implementation makes the command tests run 39% faster.
+
+	* src/seg/jUCMNav/actions/AddTimeoutPathAction.java:
+	add timeoutpath didn't work from outline
+
+2005-06-20  jkealey  <jkealey@vitis>
+
+	* src/seg/jUCMNav/model/commands/delete/DeleteStartNCEndCommand.java:
+	fixed one broken test
+
+	* src/seg/jUCMNav/figures/AndForkFigure.java, src/seg/jUCMNav/figures/AndJoinFigure.java:
+	fixed hover behaviour bugs on and-*
+
+	* src/seg/jUCMNav/model/commands/delete/DeleteMultiNodeCommand.java:
+	stub deletion regression bug
+
+2005-06-19  jmcmanus  <jmcmanus@vitis>
+
+	* src/seg/jUCMNav/editparts/ConditionEditPart.java, src/seg/jUCMNav/editparts/ConnectionOnBottomRootEditPart.java, src/seg/jUCMNav/editparts/GraphicalEditPartFactory.java, src/seg/jUCMNav/editparts/LabelEditPart.java, src/seg/jUCMNav/editparts/ModelElementEditPart.java, src/seg/jUCMNav/editparts/NodeConnectionEditPart.java, src/seg/jUCMNav/editparts/PathNodeEditPart.java:
+	Added some headers to classes in the EditPart package.
+
+2005-06-19  jpdaigle  <jpdaigle@vitis>
+
+	* src/seg/jUCMNav/figures/AndForkFigure.java, src/seg/jUCMNav/figures/AndJoinFigure.java:
+	Bug 249: Hover feedback on AND-forks/joins. For some reason though, after moving the node the feedback is not cleared.
+
+	* src/seg/jUCMNav/editpolicies/layout/NodeConnectionXYLayoutEditPolicy.java:
+	Fix for Bug 301: allow moving a pathnode when dragging it onto a connection
+

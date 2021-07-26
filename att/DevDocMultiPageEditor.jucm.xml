@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" xmlns:urncore="http:///urncore.ecore" name="URNspec" created="June 23, 2005 2:52:31 EDT PM" modified="June 23, 2005 8:10:18 EDT PM" specVersion="29" urnVersion="0.9" nextGlobalID="1266">
+  <ucmspec>
+    <maps id="2" name="Opening a file">
+      <pathGraph>
+        <pathNodes xsi:type="ucm.map:StartPoint" id="26" name="Open .jucm file" x="57" y="129" succ="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.0" compRef="//@ucmspec/@maps.0/@compRefs.1">
+          <label/>
+          <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:EndPoint" id="28" name="Opened" x="51" y="169" pred="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.11" compRef="//@ucmspec/@maps.0/@compRefs.1">
+          <label/>
+          <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:RespRef" id="138" name="RespRef" x="393" y="120" succ="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.1" pred="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.13" compRef="//@ucmspec/@maps.0/@compRefs.2" respDef="//@urndef/@responsibilities.0">
+          <label/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:Stub" id="147" name="init()" x="509" y="148" succ="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.2" pred="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.12" compRef="//@ucmspec/@maps.0/@compRefs.2">
+          <label deltaX="35" deltaY="-34"/>
+          <bindings plugin="//@ucmspec/@maps.1">
+            <in startPoint="//@ucmspec/@maps.1/@pathGraph/@pathNodes.0" stubEntry="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.12"/>
+            <out endPoint="//@ucmspec/@maps.1/@pathGraph/@pathNodes.2" stubExit="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.2"/>
+          </bindings>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:Stub" id="148" name="createPages()" x="485" y="243" succ="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.3" pred="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.2" compRef="//@ucmspec/@maps.0/@compRefs.2">
+          <label deltaX="40" deltaY="-3"/>
+          <bindings plugin="//@ucmspec/@maps.2">
+            <in startPoint="//@ucmspec/@maps.2/@pathGraph/@pathNodes.0" stubEntry="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.2"/>
+          </bindings>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:RespRef" id="151" name="RespRef" x="162" y="119" succ="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.4" pred="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.0" compRef="//@ucmspec/@maps.0/@compRefs.0" respDef="//@urndef/@responsibilities.4">
+          <label/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:Stub" id="154" name="getAdapter()" x="385" y="311" succ="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.9" pred="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.8" compRef="//@ucmspec/@maps.0/@compRefs.2">
+          <label deltaX="-65" deltaY="-24"/>
+          <bindings plugin="//@ucmspec/@maps.3">
+            <in startPoint="//@ucmspec/@maps.3/@pathGraph/@pathNodes.0" stubEntry="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.8"/>
+            <out endPoint="//@ucmspec/@maps.3/@pathGraph/@pathNodes.7" stubExit="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.9"/>
+          </bindings>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:Stub" id="168" name="request adapters" x="163" y="204" succ="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.6 //@ucmspec/@maps.0/@pathGraph/@nodeConnections.5" pred="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.3 //@ucmspec/@maps.0/@pathGraph/@nodeConnections.10" compRef="//@ucmspec/@maps.0/@compRefs.0">
+          <label deltaX="-22" deltaY="-3"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:DirectionArrow" id="411" name="DirectionArrow" x="216" y="282" succ="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.7" pred="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.6" compRef="//@ucmspec/@maps.0/@compRefs.0"/>
+        <pathNodes xsi:type="ucm.map:DirectionArrow" id="415" name="DirectionArrow" x="315" y="324" succ="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.8" pred="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.7" compRef="//@ucmspec/@maps.0/@compRefs.2"/>
+        <pathNodes xsi:type="ucm.map:DirectionArrow" id="941" name="DirectionArrow" x="274" y="249" succ="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.10" pred="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.9" compRef="//@ucmspec/@maps.0/@compRefs.2"/>
+        <pathNodes xsi:type="ucm.map:EmptyPoint" id="956" name="EmptyPoint" x="114" y="190" succ="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.11" pred="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.5" compRef="//@ucmspec/@maps.0/@compRefs.0"/>
+        <pathNodes xsi:type="ucm.map:EmptyPoint" id="99" name="EmptyPoint" x="438" y="114" succ="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.12" pred="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.1" compRef="//@ucmspec/@maps.0/@compRefs.2"/>
+        <pathNodes xsi:type="ucm.map:EmptyPoint" id="96" name="EmptyPoint" x="326" y="117" succ="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.13" pred="//@ucmspec/@maps.0/@pathGraph/@nodeConnections.4" compRef="//@ucmspec/@maps.0/@compRefs.2"/>
+        <nodeConnections source="//@ucmspec/@maps.0/@pathGraph/@pathNodes.0" target="//@ucmspec/@maps.0/@pathGraph/@pathNodes.5"/>
+        <nodeConnections source="//@ucmspec/@maps.0/@pathGraph/@pathNodes.2" target="//@ucmspec/@maps.0/@pathGraph/@pathNodes.12"/>
+        <nodeConnections source="//@ucmspec/@maps.0/@pathGraph/@pathNodes.3" target="//@ucmspec/@maps.0/@pathGraph/@pathNodes.4" inBindings="//@ucmspec/@maps.0/@pathGraph/@pathNodes.4/@bindings.0/@in.0" outBindings="//@ucmspec/@maps.0/@pathGraph/@pathNodes.3/@bindings.0/@out.0"/>
+        <nodeConnections source="//@ucmspec/@maps.0/@pathGraph/@pathNodes.4" target="//@ucmspec/@maps.0/@pathGraph/@pathNodes.7"/>
+        <nodeConnections source="//@ucmspec/@maps.0/@pathGraph/@pathNodes.5" target="//@ucmspec/@maps.0/@pathGraph/@pathNodes.13"/>
+        <nodeConnections source="//@ucmspec/@maps.0/@pathGraph/@pathNodes.7" target="//@ucmspec/@maps.0/@pathGraph/@pathNodes.11"/>
+        <nodeConnections source="//@ucmspec/@maps.0/@pathGraph/@pathNodes.7" target="//@ucmspec/@maps.0/@pathGraph/@pathNodes.8"/>
+        <nodeConnections source="//@ucmspec/@maps.0/@pathGraph/@pathNodes.8" target="//@ucmspec/@maps.0/@pathGraph/@pathNodes.9"/>
+        <nodeConnections source="//@ucmspec/@maps.0/@pathGraph/@pathNodes.9" target="//@ucmspec/@maps.0/@pathGraph/@pathNodes.6" inBindings="//@ucmspec/@maps.0/@pathGraph/@pathNodes.6/@bindings.0/@in.0"/>
+        <nodeConnections source="//@ucmspec/@maps.0/@pathGraph/@pathNodes.6" target="//@ucmspec/@maps.0/@pathGraph/@pathNodes.10" outBindings="//@ucmspec/@maps.0/@pathGraph/@pathNodes.6/@bindings.0/@out.0"/>
+        <nodeConnections source="//@ucmspec/@maps.0/@pathGraph/@pathNodes.10" target="//@ucmspec/@maps.0/@pathGraph/@pathNodes.7"/>
+        <nodeConnections source="//@ucmspec/@maps.0/@pathGraph/@pathNodes.11" target="//@ucmspec/@maps.0/@pathGraph/@pathNodes.1"/>
+        <nodeConnections source="//@ucmspec/@maps.0/@pathGraph/@pathNodes.12" target="//@ucmspec/@maps.0/@pathGraph/@pathNodes.3" inBindings="//@ucmspec/@maps.0/@pathGraph/@pathNodes.3/@bindings.0/@in.0"/>
+        <nodeConnections source="//@ucmspec/@maps.0/@pathGraph/@pathNodes.13" target="//@ucmspec/@maps.0/@pathGraph/@pathNodes.2"/>
+      </pathGraph>
+      <compRefs id="7" name="ComponentRef" x="106" y="67" width="134" height="299" compDef="//@urndef/@components.0" pathNodes="//@ucmspec/@maps.0/@pathGraph/@pathNodes.5 //@ucmspec/@maps.0/@pathGraph/@pathNodes.7 //@ucmspec/@maps.0/@pathGraph/@pathNodes.8 //@ucmspec/@maps.0/@pathGraph/@pathNodes.11">
+        <label/>
+      </compRefs>
+      <compRefs id="11" name="ComponentRef" x="16" y="67" width="80" height="297" compDef="//@urndef/@components.1" pathNodes="//@ucmspec/@maps.0/@pathGraph/@pathNodes.0 //@ucmspec/@maps.0/@pathGraph/@pathNodes.1">
+        <label/>
+      </compRefs>
+      <compRefs id="15" name="ComponentRef" x="246" y="65" width="331" height="303" compDef="//@urndef/@components.2" pathNodes="//@ucmspec/@maps.0/@pathGraph/@pathNodes.2 //@ucmspec/@maps.0/@pathGraph/@pathNodes.3 //@ucmspec/@maps.0/@pathGraph/@pathNodes.4 //@ucmspec/@maps.0/@pathGraph/@pathNodes.6 //@ucmspec/@maps.0/@pathGraph/@pathNodes.9 //@ucmspec/@maps.0/@pathGraph/@pathNodes.10 //@ucmspec/@maps.0/@pathGraph/@pathNodes.12 //@ucmspec/@maps.0/@pathGraph/@pathNodes.13">
+        <label/>
+      </compRefs>
+    </maps>
+    <maps id="156" name="init()" parentStub="//@ucmspec/@maps.0/@pathGraph/@pathNodes.3/@bindings.0">
+      <pathGraph>
+        <pathNodes xsi:type="ucm.map:StartPoint" id="311" name="StartPoint" x="68" y="82" succ="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.0" inBindings="//@ucmspec/@maps.0/@pathGraph/@pathNodes.3/@bindings.0/@in.0">
+          <label/>
+          <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:EmptyPoint" id="312" name="EmptyPoint" x="168" y="82" succ="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.1" pred="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.0"/>
+        <pathNodes xsi:type="ucm.map:EndPoint" id="313" name="EndPoint" x="62" y="408" pred="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.14" outBindings="//@ucmspec/@maps.0/@pathGraph/@pathNodes.3/@bindings.0/@out.0">
+          <label/>
+          <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:EmptyPoint" id="328" name="EmptyPoint" x="295" y="84" succ="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.2" pred="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.1" compRef="//@ucmspec/@maps.1/@compRefs.0"/>
+        <pathNodes xsi:type="ucm.map:EmptyPoint" id="341" name="EmptyPoint" x="173" y="191" succ="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.3" pred="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.16"/>
+        <pathNodes xsi:type="ucm.map:RespRef" id="347" name="RespRef" x="447" y="91" succ="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.4" pred="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.2" compRef="//@ucmspec/@maps.1/@compRefs.1" respDef="//@urndef/@responsibilities.5">
+          <label deltaX="-45" deltaY="-22"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:RespRef" id="351" name="RespRef" x="440" y="197" succ="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.5" pred="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.10" compRef="//@ucmspec/@maps.1/@compRefs.1" respDef="//@urndef/@responsibilities.6">
+          <label deltaX="-76" deltaY="-21"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:OrFork" id="359" name="OrFork" x="310" y="141" succ="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.7 //@ucmspec/@maps.1/@pathGraph/@nodeConnections.6" pred="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.11" compRef="//@ucmspec/@maps.1/@compRefs.0"/>
+        <pathNodes xsi:type="ucm.map:OrJoin" id="379" name="OrJoin" x="289" y="231" succ="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.8" pred="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.5 //@ucmspec/@maps.1/@pathGraph/@nodeConnections.9" compRef="//@ucmspec/@maps.1/@compRefs.0"/>
+        <pathNodes xsi:type="ucm.map:DirectionArrow" id="380" name="DirectionArrow" x="278" y="187" succ="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.9" pred="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.6" compRef="//@ucmspec/@maps.1/@compRefs.0"/>
+        <pathNodes xsi:type="ucm.map:DirectionArrow" id="382" name="DirectionArrow" x="463" y="160" succ="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.10" pred="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.7" compRef="//@ucmspec/@maps.1/@compRefs.1"/>
+        <pathNodes xsi:type="ucm.map:DirectionArrow" id="383" name="DirectionArrow" x="395" y="122" succ="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.11" pred="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.4" compRef="//@ucmspec/@maps.1/@compRefs.1"/>
+        <pathNodes xsi:type="ucm.map:RespRef" id="388" name="RespRef" x="111" y="217" succ="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.12" pred="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.3" respDef="//@urndef/@responsibilities.7">
+          <label deltaX="18" deltaY="4"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:RespRef" id="392" name="RespRef" x="162" y="295" succ="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.13" pred="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.12" respDef="//@urndef/@responsibilities.8">
+          <label deltaX="-27" deltaY="8"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:EmptyPoint" id="400" name="EmptyPoint" x="288" y="415" succ="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.14" pred="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.15" compRef="//@ucmspec/@maps.1/@compRefs.2"/>
+        <pathNodes xsi:type="ucm.map:RespRef" id="405" name="RespRef" x="305" y="369" succ="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.15" pred="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.13" compRef="//@ucmspec/@maps.1/@compRefs.2" respDef="//@urndef/@responsibilities.9">
+          <label deltaX="-19"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:DirectionArrow" id="408" name="DirectionArrow" x="249" y="242" succ="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.16" pred="//@ucmspec/@maps.1/@pathGraph/@nodeConnections.8" compRef="//@ucmspec/@maps.1/@compRefs.0"/>
+        <nodeConnections source="//@ucmspec/@maps.1/@pathGraph/@pathNodes.0" target="//@ucmspec/@maps.1/@pathGraph/@pathNodes.1"/>
+        <nodeConnections source="//@ucmspec/@maps.1/@pathGraph/@pathNodes.1" target="//@ucmspec/@maps.1/@pathGraph/@pathNodes.3"/>
+        <nodeConnections source="//@ucmspec/@maps.1/@pathGraph/@pathNodes.3" target="//@ucmspec/@maps.1/@pathGraph/@pathNodes.5"/>
+        <nodeConnections source="//@ucmspec/@maps.1/@pathGraph/@pathNodes.4" target="//@ucmspec/@maps.1/@pathGraph/@pathNodes.12"/>
+        <nodeConnections source="//@ucmspec/@maps.1/@pathGraph/@pathNodes.5" target="//@ucmspec/@maps.1/@pathGraph/@pathNodes.11"/>
+        <nodeConnections source="//@ucmspec/@maps.1/@pathGraph/@pathNodes.6" target="//@ucmspec/@maps.1/@pathGraph/@pathNodes.8"/>
+        <nodeConnections source="//@ucmspec/@maps.1/@pathGraph/@pathNodes.7" target="//@ucmspec/@maps.1/@pathGraph/@pathNodes.9">
+          <condition deltaX="50" deltaY="10" label="loaded" expression="true"/>
+        </nodeConnections>
+        <nodeConnections source="//@ucmspec/@maps.1/@pathGraph/@pathNodes.7" target="//@ucmspec/@maps.1/@pathGraph/@pathNodes.10">
+          <condition deltaX="22" deltaY="-8" label="errorLoading" expression="true"/>
+        </nodeConnections>
+        <nodeConnections source="//@ucmspec/@maps.1/@pathGraph/@pathNodes.8" target="//@ucmspec/@maps.1/@pathGraph/@pathNodes.16"/>
+        <nodeConnections source="//@ucmspec/@maps.1/@pathGraph/@pathNodes.9" target="//@ucmspec/@maps.1/@pathGraph/@pathNodes.8"/>
+        <nodeConnections source="//@ucmspec/@maps.1/@pathGraph/@pathNodes.10" target="//@ucmspec/@maps.1/@pathGraph/@pathNodes.6"/>
+        <nodeConnections source="//@ucmspec/@maps.1/@pathGraph/@pathNodes.11" target="//@ucmspec/@maps.1/@pathGraph/@pathNodes.7"/>
+        <nodeConnections source="//@ucmspec/@maps.1/@pathGraph/@pathNodes.12" target="//@ucmspec/@maps.1/@pathGraph/@pathNodes.13"/>
+        <nodeConnections source="//@ucmspec/@maps.1/@pathGraph/@pathNodes.13" target="//@ucmspec/@maps.1/@pathGraph/@pathNodes.15"/>
+        <nodeConnections source="//@ucmspec/@maps.1/@pathGraph/@pathNodes.14" target="//@ucmspec/@maps.1/@pathGraph/@pathNodes.2"/>
+        <nodeConnections source="//@ucmspec/@maps.1/@pathGraph/@pathNodes.15" target="//@ucmspec/@maps.1/@pathGraph/@pathNodes.14"/>
+        <nodeConnections source="//@ucmspec/@maps.1/@pathGraph/@pathNodes.16" target="//@ucmspec/@maps.1/@pathGraph/@pathNodes.4"/>
+      </pathGraph>
+      <compRefs id="316" name="ComponentRef" x="233" y="40" width="439" height="265" compDef="//@urndef/@components.4" children="//@ucmspec/@maps.1/@compRefs.1" pathNodes="//@ucmspec/@maps.1/@pathGraph/@pathNodes.3 //@ucmspec/@maps.1/@pathGraph/@pathNodes.7 //@ucmspec/@maps.1/@pathGraph/@pathNodes.8 //@ucmspec/@maps.1/@pathGraph/@pathNodes.9 //@ucmspec/@maps.1/@pathGraph/@pathNodes.16">
+        <label/>
+      </compRefs>
+      <compRefs id="320" name="ComponentRef" x="349" y="61" width="283" height="170" compDef="//@urndef/@components.5" parent="//@ucmspec/@maps.1/@compRefs.0" pathNodes="//@ucmspec/@maps.1/@pathGraph/@pathNodes.5 //@ucmspec/@maps.1/@pathGraph/@pathNodes.6 //@ucmspec/@maps.1/@pathGraph/@pathNodes.10 //@ucmspec/@maps.1/@pathGraph/@pathNodes.11">
+        <label/>
+      </compRefs>
+      <compRefs id="396" name="ComponentRef" x="234" y="320" width="438" height="126" compDef="//@urndef/@components.6" pathNodes="//@ucmspec/@maps.1/@pathGraph/@pathNodes.14 //@ucmspec/@maps.1/@pathGraph/@pathNodes.15">
+        <label/>
+      </compRefs>
+    </maps>
+    <maps id="157" name="createPages()" parentStub="//@ucmspec/@maps.0/@pathGraph/@pathNodes.4/@bindings.0">
+      <pathGraph>
+        <pathNodes xsi:type="ucm.map:StartPoint" id="1082" name="StartPoint" x="32" y="142" succ="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.0" compRef="//@ucmspec/@maps.2/@compRefs.0" inBindings="//@ucmspec/@maps.0/@pathGraph/@pathNodes.4/@bindings.0/@in.0">
+          <label deltaX="-24"/>
+          <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:RespRef" id="1087" name="RespRef" x="409" y="99" succ="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.1" pred="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.15" compRef="//@ucmspec/@maps.2/@compRefs.1" respDef="//@urndef/@responsibilities.16">
+          <label deltaX="-26" deltaY="3"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:RespRef" id="1091" name="RespRef" x="414" y="201" succ="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.2" pred="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.1" compRef="//@ucmspec/@maps.2/@compRefs.1" respDef="//@urndef/@responsibilities.17">
+          <label deltaX="-59" deltaY="-19"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:RespRef" id="1093" name="RespRef" x="405" y="296" succ="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.3" pred="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.2" compRef="//@ucmspec/@maps.2/@compRefs.1" respDef="//@urndef/@responsibilities.18">
+          <label deltaX="-43" deltaY="-20"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:RespRef" id="1097" name="RespRef" x="330" y="293" succ="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.4" pred="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.3" compRef="//@ucmspec/@maps.2/@compRefs.1" respDef="//@urndef/@responsibilities.8">
+          <label deltaX="-20" deltaY="-1"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:EndPoint" id="1109" name="EndPoint" x="42" y="303" pred="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.6" compRef="//@ucmspec/@maps.2/@compRefs.0">
+          <label deltaX="-13" deltaY="2"/>
+          <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:OrFork" id="1190" name="OrFork" x="115" y="146" succ="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.5 //@ucmspec/@maps.2/@pathGraph/@nodeConnections.8" pred="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.0" compRef="//@ucmspec/@maps.2/@compRefs.0"/>
+        <pathNodes xsi:type="ucm.map:OrFork" id="1193" name="OrFork" x="283" y="253" succ="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.10 //@ucmspec/@maps.2/@pathGraph/@nodeConnections.9" pred="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.4" compRef="//@ucmspec/@maps.2/@compRefs.1"/>
+        <pathNodes xsi:type="ucm.map:OrJoin" id="1203" name="OrJoin" x="114" y="301" succ="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.6" pred="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.14 //@ucmspec/@maps.2/@pathGraph/@nodeConnections.13" compRef="//@ucmspec/@maps.2/@compRefs.0"/>
+        <pathNodes xsi:type="ucm.map:DirectionArrow" id="1205" name="DirectionArrow" x="252" y="145" succ="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.11" pred="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.8" compRef="//@ucmspec/@maps.2/@compRefs.1"/>
+        <pathNodes xsi:type="ucm.map:DirectionArrow" id="1206" name="DirectionArrow" x="279" y="192" succ="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.12" pred="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.10" compRef="//@ucmspec/@maps.2/@compRefs.1"/>
+        <pathNodes xsi:type="ucm.map:DirectionArrow" id="1207" name="DirectionArrow" x="259" y="330" succ="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.13" pred="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.9" compRef="//@ucmspec/@maps.2/@compRefs.1"/>
+        <pathNodes xsi:type="ucm.map:DirectionArrow" id="1208" name="DirectionArrow" x="154" y="240" succ="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.14" pred="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.5" compRef="//@ucmspec/@maps.2/@compRefs.0"/>
+        <pathNodes xsi:type="ucm.map:OrJoin" id="1262" name="OrJoin" x="279" y="149" succ="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.7" pred="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.12 //@ucmspec/@maps.2/@pathGraph/@nodeConnections.11" compRef="//@ucmspec/@maps.2/@compRefs.1"/>
+        <pathNodes xsi:type="ucm.map:DirectionArrow" id="1263" name="DirectionArrow" x="307" y="88" succ="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.15" pred="//@ucmspec/@maps.2/@pathGraph/@nodeConnections.7" compRef="//@ucmspec/@maps.2/@compRefs.1"/>
+        <nodeConnections source="//@ucmspec/@maps.2/@pathGraph/@pathNodes.0" target="//@ucmspec/@maps.2/@pathGraph/@pathNodes.6"/>
+        <nodeConnections source="//@ucmspec/@maps.2/@pathGraph/@pathNodes.1" target="//@ucmspec/@maps.2/@pathGraph/@pathNodes.2"/>
+        <nodeConnections source="//@ucmspec/@maps.2/@pathGraph/@pathNodes.2" target="//@ucmspec/@maps.2/@pathGraph/@pathNodes.3"/>
+        <nodeConnections source="//@ucmspec/@maps.2/@pathGraph/@pathNodes.3" target="//@ucmspec/@maps.2/@pathGraph/@pathNodes.4"/>
+        <nodeConnections source="//@ucmspec/@maps.2/@pathGraph/@pathNodes.4" target="//@ucmspec/@maps.2/@pathGraph/@pathNodes.7"/>
+        <nodeConnections source="//@ucmspec/@maps.2/@pathGraph/@pathNodes.6" target="//@ucmspec/@maps.2/@pathGraph/@pathNodes.12">
+          <condition deltaX="108" deltaY="-7" label="no maps left to add" expression="true"/>
+        </nodeConnections>
+        <nodeConnections source="//@ucmspec/@maps.2/@pathGraph/@pathNodes.8" target="//@ucmspec/@maps.2/@pathGraph/@pathNodes.5"/>
+        <nodeConnections source="//@ucmspec/@maps.2/@pathGraph/@pathNodes.13" target="//@ucmspec/@maps.2/@pathGraph/@pathNodes.14"/>
+        <nodeConnections source="//@ucmspec/@maps.2/@pathGraph/@pathNodes.6" target="//@ucmspec/@maps.2/@pathGraph/@pathNodes.9">
+          <condition deltaX="79" deltaY="22" label="maps left" expression="true"/>
+        </nodeConnections>
+        <nodeConnections source="//@ucmspec/@maps.2/@pathGraph/@pathNodes.7" target="//@ucmspec/@maps.2/@pathGraph/@pathNodes.11">
+          <condition deltaX="-5" deltaY="-8" label="no maps left to add" expression="true"/>
+        </nodeConnections>
+        <nodeConnections source="//@ucmspec/@maps.2/@pathGraph/@pathNodes.7" target="//@ucmspec/@maps.2/@pathGraph/@pathNodes.10">
+          <condition deltaX="-7" label="maps left" expression="true"/>
+        </nodeConnections>
+        <nodeConnections source="//@ucmspec/@maps.2/@pathGraph/@pathNodes.9" target="//@ucmspec/@maps.2/@pathGraph/@pathNodes.13"/>
+        <nodeConnections source="//@ucmspec/@maps.2/@pathGraph/@pathNodes.10" target="//@ucmspec/@maps.2/@pathGraph/@pathNodes.13"/>
+        <nodeConnections source="//@ucmspec/@maps.2/@pathGraph/@pathNodes.11" target="//@ucmspec/@maps.2/@pathGraph/@pathNodes.8"/>
+        <nodeConnections source="//@ucmspec/@maps.2/@pathGraph/@pathNodes.12" target="//@ucmspec/@maps.2/@pathGraph/@pathNodes.8"/>
+        <nodeConnections source="//@ucmspec/@maps.2/@pathGraph/@pathNodes.14" target="//@ucmspec/@maps.2/@pathGraph/@pathNodes.1"/>
+      </pathGraph>
+      <compRefs id="1075" name="ComponentRef" x="17" y="39" width="174" height="384" compDef="//@urndef/@components.2" pathNodes="//@ucmspec/@maps.2/@pathGraph/@pathNodes.0 //@ucmspec/@maps.2/@pathGraph/@pathNodes.5 //@ucmspec/@maps.2/@pathGraph/@pathNodes.6 //@ucmspec/@maps.2/@pathGraph/@pathNodes.8 //@ucmspec/@maps.2/@pathGraph/@pathNodes.12">
+        <label/>
+      </compRefs>
+      <compRefs id="1079" name="ComponentRef" x="216" y="39" width="302" height="380" compDef="//@urndef/@components.8" pathNodes="//@ucmspec/@maps.2/@pathGraph/@pathNodes.1 //@ucmspec/@maps.2/@pathGraph/@pathNodes.2 //@ucmspec/@maps.2/@pathGraph/@pathNodes.3 //@ucmspec/@maps.2/@pathGraph/@pathNodes.4 //@ucmspec/@maps.2/@pathGraph/@pathNodes.7 //@ucmspec/@maps.2/@pathGraph/@pathNodes.9 //@ucmspec/@maps.2/@pathGraph/@pathNodes.10 //@ucmspec/@maps.2/@pathGraph/@pathNodes.11 //@ucmspec/@maps.2/@pathGraph/@pathNodes.13 //@ucmspec/@maps.2/@pathGraph/@pathNodes.14">
+        <label deltaX="-128" deltaY="1"/>
+      </compRefs>
+    </maps>
+    <maps id="158" name="getAdapter()" parentStub="//@ucmspec/@maps.0/@pathGraph/@pathNodes.6/@bindings.0">
+      <pathGraph>
+        <pathNodes xsi:type="ucm.map:StartPoint" id="417" name="Request Adapter" x="43" y="239" succ="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.0" inBindings="//@ucmspec/@maps.0/@pathGraph/@pathNodes.6/@bindings.0/@in.0">
+          <label deltaX="-1" deltaY="-39"/>
+          <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:OrFork" id="434" name="Which class?" x="144" y="226" succ="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.1 //@ucmspec/@maps.3/@pathGraph/@nodeConnections.2 //@ucmspec/@maps.3/@pathGraph/@nodeConnections.4 //@ucmspec/@maps.3/@pathGraph/@nodeConnections.6 //@ucmspec/@maps.3/@pathGraph/@nodeConnections.8" pred="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.0">
+          <label deltaX="37" deltaY="-10"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:EmptyPoint" id="474" name="EmptyPoint" x="142" y="308" succ="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.3" pred="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.2"/>
+        <pathNodes xsi:type="ucm.map:EmptyPoint" id="476" name="EmptyPoint" x="172" y="98" succ="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.5" pred="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.4"/>
+        <pathNodes xsi:type="ucm.map:EmptyPoint" id="478" name="EmptyPoint" x="80" y="410" succ="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.7" pred="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.6"/>
+        <pathNodes xsi:type="ucm.map:EmptyPoint" id="480" name="EmptyPoint" x="129" y="62" succ="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.9" pred="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.8"/>
+        <pathNodes xsi:type="ucm.map:OrFork" id="887" name="OrFork" x="325" y="241" succ="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.11 //@ucmspec/@maps.3/@pathGraph/@nodeConnections.10" pred="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.1"/>
+        <pathNodes xsi:type="ucm.map:EndPoint" id="889" name="Return Adapter" x="692" y="220" pred="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.19" outBindings="//@ucmspec/@maps.0/@pathGraph/@pathNodes.6/@bindings.0/@out.0">
+          <label/>
+          <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:RespRef" id="967" name="RespRef" x="514" y="61" succ="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.12" pred="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.9" respDef="//@urndef/@responsibilities.10">
+          <label/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:RespRef" id="969" name="RespRef" x="442" y="110" succ="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.13" pred="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.5" respDef="//@urndef/@responsibilities.11">
+          <label/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:RespRef" id="971" name="RespRef" x="424" y="214" succ="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.14" pred="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.10" respDef="//@urndef/@responsibilities.12">
+          <label deltaX="57" deltaY="4"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:RespRef" id="973" name="RespRef" x="450" y="312" succ="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.15" pred="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.11" respDef="//@urndef/@responsibilities.13">
+          <label deltaX="4" deltaY="-38"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:RespRef" id="975" name="RespRef" x="411" y="360" succ="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.16" pred="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.3" respDef="//@urndef/@responsibilities.14">
+          <label deltaX="7" deltaY="-36"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:RespRef" id="977" name="RespRef" x="534" y="439" succ="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.17" pred="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.7" respDef="//@urndef/@responsibilities.15">
+          <label deltaX="1" deltaY="-39"/>
+        </pathNodes>
+        <pathNodes xsi:type="ucm.map:OrJoin" id="1003" name="OrJoin" x="563" y="210" succ="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.18" pred="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.14 //@ucmspec/@maps.3/@pathGraph/@nodeConnections.17 //@ucmspec/@maps.3/@pathGraph/@nodeConnections.13 //@ucmspec/@maps.3/@pathGraph/@nodeConnections.12 //@ucmspec/@maps.3/@pathGraph/@nodeConnections.20 //@ucmspec/@maps.3/@pathGraph/@nodeConnections.21"/>
+        <pathNodes xsi:type="ucm.map:EmptyPoint" id="" name="EmptyPoint" x="627" y="227" succ="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.19" pred="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.18"/>
+        <pathNodes xsi:type="ucm.map:EmptyPoint" id="1046" name="EmptyPoint" x="550" y="330" succ="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.20" pred="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.16"/>
+        <pathNodes xsi:type="ucm.map:EmptyPoint" id="1055" name="EmptyPoint" x="534" y="279" succ="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.21" pred="//@ucmspec/@maps.3/@pathGraph/@nodeConnections.15"/>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.0" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.1"/>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.1" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.6">
+          <condition deltaX="71" deltaY="21" label="IContentOutlinePage.class" expression="true"/>
+        </nodeConnections>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.1" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.2">
+          <condition deltaX="-13" deltaY="-9" label="IPropertySheetPage.class" expression="true"/>
+        </nodeConnections>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.2" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.12"/>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.1" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.3">
+          <condition deltaX="-8" deltaY="30" label="ActionRegistry.class" expression="true"/>
+        </nodeConnections>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.3" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.9"/>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.1" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.4">
+          <condition deltaX="-7" deltaY="-44" label="ZoomManager.class" expression="true"/>
+        </nodeConnections>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.4" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.13"/>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.1" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.5">
+          <condition deltaX="-6" deltaY="53" label="CommandStack.class" expression="true"/>
+        </nodeConnections>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.5" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.8"/>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.6" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.10">
+          <condition label="getPageCount()&gt;0" expression="true"/>
+        </nodeConnections>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.6" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.11">
+          <condition deltaX="16" deltaY="25" label="getPageCount&lt;=0" expression="true"/>
+        </nodeConnections>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.8" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.14"/>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.9" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.14"/>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.10" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.14"/>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.11" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.17"/>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.12" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.16"/>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.13" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.14"/>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.14" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.15"/>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.15" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.7"/>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.16" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.14"/>
+        <nodeConnections source="//@ucmspec/@maps.3/@pathGraph/@pathNodes.17" target="//@ucmspec/@maps.3/@pathGraph/@pathNodes.14"/>
+      </pathGraph>
+    </maps>
+  </ucmspec>
+  <urndef>
+    <responsibilities id="137" name="(ctr)" respRefs="//@ucmspec/@maps.0/@pathGraph/@pathNodes.2"/>
+    <responsibilities id="139" name="init"/>
+    <responsibilities id="141" name="createPages()"/>
+    <responsibilities id="143" name="getAdapter()"/>
+    <responsibilities id="150" name="openEditor()" respRefs="//@ucmspec/@maps.0/@pathGraph/@pathNodes.5"/>
+    <responsibilities id="346" name="load(IPath)" respRefs="//@ucmspec/@maps.1/@pathGraph/@pathNodes.5"/>
+    <responsibilities id="350" name="createURNspec(IPath)" respRefs="//@ucmspec/@maps.1/@pathGraph/@pathNodes.6"/>
+    <responsibilities id="387" name="setModel()" respRefs="//@ucmspec/@maps.1/@pathGraph/@pathNodes.12"/>
+    <responsibilities id="391" name="register listeners" respRefs="//@ucmspec/@maps.1/@pathGraph/@pathNodes.13 //@ucmspec/@maps.2/@pathGraph/@pathNodes.4"/>
+    <responsibilities id="404" name="createActions()" respRefs="//@ucmspec/@maps.1/@pathGraph/@pathNodes.15"/>
+    <responsibilities id="966" name="DelegatingCommandStack" respRefs="//@ucmspec/@maps.3/@pathGraph/@pathNodes.8"/>
+    <responsibilities id="968" name="ActionRegistry" respRefs="//@ucmspec/@maps.3/@pathGraph/@pathNodes.9"/>
+    <responsibilities id="970" name="getCurrentPage().getAdapter(IContentOutlinePage.class)" respRefs="//@ucmspec/@maps.3/@pathGraph/@pathNodes.10"/>
+    <responsibilities id="972" name="UcmOutlinePage" respRefs="//@ucmspec/@maps.3/@pathGraph/@pathNodes.11"/>
+    <responsibilities id="974" name="getCurrentPage().getAdapter(IPropertySheetPage.class)" respRefs="//@ucmspec/@maps.3/@pathGraph/@pathNodes.12"/>
+    <responsibilities id="976" name="DelegatingZoomManager" respRefs="//@ucmspec/@maps.3/@pathGraph/@pathNodes.13"/>
+    <responsibilities id="1086" name="new UCMEditor()" respRefs="//@ucmspec/@maps.2/@pathGraph/@pathNodes.1"/>
+    <responsibilities id="1090" name="setModel(map)" respRefs="//@ucmspec/@maps.2/@pathGraph/@pathNodes.2"/>
+    <responsibilities id="1092" name="addPage()" respRefs="//@ucmspec/@maps.2/@pathGraph/@pathNodes.3"/>
+    <responsibilities id="1096" name="Responsibility1096"/>
+    <components xsi:type="urncore:Component" id="6" name="Eclipse / GEF framework" compRefs="//@ucmspec/@maps.0/@compRefs.0"/>
+    <components xsi:type="urncore:Component" id="10" name="User" compRefs="//@ucmspec/@maps.0/@compRefs.1" kind="Actor"/>
+    <components xsi:type="urncore:Component" id="14" name="seg.jUCMNav.editors.UCMNavMultiPageEditor" compRefs="//@ucmspec/@maps.0/@compRefs.2 //@ucmspec/@maps.2/@compRefs.0"/>
+    <components xsi:type="urncore:Component" id="22" name="MultiPageEditorPart "/>
+    <components xsi:type="urncore:Component" id="315" name="seg.jUCMNav.editors.resourceManagement.MultiPageFileManager" compRefs="//@ucmspec/@maps.1/@compRefs.0"/>
+    <components xsi:type="urncore:Component" id="319" name="seg.jUCMNav.editors.resourceManagement.URNModelManager" compRefs="//@ucmspec/@maps.1/@compRefs.1"/>
+    <components xsi:type="urncore:Component" id="395" name="ActionRegistryManager" compRefs="//@ucmspec/@maps.1/@compRefs.2"/>
+    <components xsi:type="urncore:Component" id="1074" name="Component1074"/>
+    <components xsi:type="urncore:Component" id="1078" name="seg.jUCMNav.editors.MultiPageTabManager" compRefs="//@ucmspec/@maps.2/@compRefs.1"/>
+  </urndef>
+</urn:URNspec>
